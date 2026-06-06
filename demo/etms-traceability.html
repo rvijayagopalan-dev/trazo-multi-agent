@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAZO - Strategic Traceability Path</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/etms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>TRAZO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="etms-overview.html">ETMS</a></li>
+                <li><a href="#" class="active">Traceability</a></li>
+                <li><a href="etms-components.html">Components</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="etms-hero">
+        <div class="container">
+            <h1>Strategic Traceability Paths</h1>
+            <p>Trace value from strategic goals through to infrastructure investments</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="etms-container">
+        <div class="container">
+            <!-- Path Selector -->
+            <section class="path-selector">
+                <h2>Select a Strategic Path</h2>
+                <p class="section-subtitle">View real-world examples of end-to-end traceability</p>
+
+                <div class="path-buttons">
+                    <button class="path-btn active" onclick="showPath('revenue')">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Revenue Growth</span>
+                    </button>
+                    <button class="path-btn" onclick="showPath('retention')">
+                        <i class="fas fa-users"></i>
+                        <span>Customer Retention</span>
+                    </button>
+                    <button class="path-btn" onclick="showPath('efficiency')">
+                        <i class="fas fa-bolt"></i>
+                        <span>Operational Efficiency</span>
+                    </button>
+                    <button class="path-btn" onclick="showPath('digital')">
+                        <i class="fas fa-cloud"></i>
+                        <span>Digital Transformation</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Path Visualization -->
+            <section class="path-visualization">
+                <!-- Revenue Growth Path -->
+                <div id="revenue-path" class="path-flow active">
+                    <h3>Revenue Growth Path</h3>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Strategic Goal</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Increase Annual Revenue by 25%</p>
+                            <div class="step-details">
+                                <span class="detail"><strong>Timeline:</strong> 2026-2027</span>
+                                <span class="detail"><strong>Owner:</strong> CFO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h4>Objective</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Expand Market to Enterprise Segment</p>
+                            <div class="step-details">
+                                <span class="detail"><strong>KR:</strong> 5,000 Enterprise Customers</span>
+                                <span class="detail"><strong>Owner:</strong> VP Sales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h4>Outcome</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Enterprise Product Suite Adopted</p>
+                            <div class="step-details">
+                                <span class="detail"><strong>Metric:</strong> Product Revenue +$50M</span>
+                                <span class="detail"><strong>Owner:</strong> Chief Product Officer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h4>Business Capability</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Enterprise Sales Capability</p>
+                            <div class="step-details">
+                                <span class="detail"><strong>Components:</strong> Sales Tools, CRM, Pricing</span>
+                                <span class="detail"><strong>Owner:</strong> VP Sales Operations</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">5</span>
+                            <h4>Product</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Enterprise Edition Suite</p>
+                            <div class="step-details">
+                                <span class="detail"><strong>Features:</strong> SSO, Advanced Analytics, Support</span>
+                                <span class="detail"><strong>Owner:</strong> Product Manager</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">6</span>
+                            <h4>Program</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Enterprise Platform Modernization</p>
+                            <div class="step-details">
+                                <span class="detail"><strong>Budget:</strong> $8M</span>
+                                <span class="detail"><strong>Owner:</strong> Program Manager</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">7</span>
+                            <h4>Projects</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Multiple Execution Projects</p>
+                            <div class="step-details">
+                                <span class="detail">• SSO Integration Project</span>
+                                <span class="detail">• Analytics Platform Project</span>
+                                <span class="detail">• Compliance Framework Project</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">8</span>
+                            <h4>Solutions</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Technical Architecture & Design</p>
+                            <div class="step-details">
+                                <span class="detail">• Microservices Architecture</span>
+                                <span class="detail">• Multi-tenant SaaS Design</span>
+                                <span class="detail">• API-first Integration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">9</span>
+                            <h4>Applications</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">New & Modified Systems</p>
+                            <div class="step-details">
+                                <span class="detail">• Identity Management Service</span>
+                                <span class="detail">• Analytics Engine</span>
+                                <span class="detail">• Compliance Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">10</span>
+                            <h4>Data Products</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Enterprise Data Sets</p>
+                            <div class="step-details">
+                                <span class="detail">• Customer Master Data</span>
+                                <span class="detail">• Transaction Analytics</span>
+                                <span class="detail">• Usage Metrics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">11</span>
+                            <h4>Infrastructure</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Cloud & Technology Foundation</p>
+                            <div class="step-details">
+                                <span class="detail">• Kubernetes Clusters (Multi-region)</span>
+                                <span class="detail">• Cloud Data Warehouse</span>
+                                <span class="detail">• CDN & Global Load Balancing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="value-realization">
+                        <h4>Value Realized</h4>
+                        <div class="value-metrics">
+                            <div class="value-metric">
+                                <div class="value-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="value-info">
+                                    <p class="value-name">Revenue Impact</p>
+                                    <p class="value-amount">+$50M ARR</p>
+                                </div>
+                            </div>
+                            <div class="value-metric">
+                                <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="value-info">
+                                    <p class="value-name">Market Expansion</p>
+                                    <p class="value-amount">5,000 Enterprise Customers</p>
+                                </div>
+                            </div>
+                            <div class="value-metric">
+                                <div class="value-icon"><i class="fas fa-users"></i></div>
+                                <div class="value-info">
+                                    <p class="value-name">Team Growth</p>
+                                    <p class="value-amount">+250 Employees</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Paths (Similar Structure) -->
+                <div id="retention-path" class="path-flow" style="display: none;">
+                    <h3>Customer Retention Path</h3>
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Strategic Goal</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Increase Customer Retention from 87% to 95%</p>
+                        </div>
+                    </div>
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">2-11</span>
+                            <h4>Traceability Chain</h4>
+                        </div>
+                        <div class="step-content">
+                            <p>Objective → Outcome → Capability → Product → Program → Projects → Solutions → Applications → Data → Infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="value-realization">
+                        <h4>Value Realized</h4>
+                        <p><strong>Retention Improvement:</strong> +8% = $12M additional ARR<br><strong>Churn Reduction:</strong> 500 fewer customer losses annually</p>
+                    </div>
+                </div>
+
+                <div id="efficiency-path" class="path-flow" style="display: none;">
+                    <h3>Operational Efficiency Path</h3>
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Strategic Goal</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Reduce Operational Costs by 20%</p>
+                        </div>
+                    </div>
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">2-11</span>
+                            <h4>Traceability Chain</h4>
+                        </div>
+                        <div class="step-content">
+                            <p>Objective → Outcome → Capability → Product → Program → Projects → Solutions → Applications → Data → Infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="value-realization">
+                        <h4>Value Realized</h4>
+                        <p><strong>Cost Savings:</strong> $5M annually<br><strong>Automation:</strong> 10,000 hours/year saved</p>
+                    </div>
+                </div>
+
+                <div id="digital-path" class="path-flow" style="display: none;">
+                    <h3>Digital Transformation Path</h3>
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Strategic Goal</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-name">Transform to Cloud-Native Organization</p>
+                        </div>
+                    </div>
+                    <div class="step-connector"><i class="fas fa-arrow-down"></i></div>
+                    <div class="path-step">
+                        <div class="step-header">
+                            <span class="step-number">2-11</span>
+                            <h4>Traceability Chain</h4>
+                        </div>
+                        <div class="step-content">
+                            <p>Objective → Outcome → Capability → Product → Program → Projects → Solutions → Applications → Data → Infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="value-realization">
+                        <h4>Value Realized</h4>
+                        <p><strong>Agility:</strong> 3x faster deployment<br><strong>Reliability:</strong> 99.99% uptime<br><strong>Scalability:</strong> 10x growth capacity</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Questions -->
+            <section class="key-questions">
+                <h2>Key Questions Answered</h2>
+                <div class="questions-grid">
+                    <div class="question-card">
+                        <i class="fas fa-arrow-right"></i>
+                        <p class="question-text">Which projects support strategic goals?</p>
+                    </div>
+                    <div class="question-card">
+                        <i class="fas fa-arrow-right"></i>
+                        <p class="question-text">What business value did this project create?</p>
+                    </div>
+                    <div class="question-card">
+                        <i class="fas fa-arrow-right"></i>
+                        <p class="question-text">Which applications support which outcomes?</p>
+                    </div>
+                    <div class="question-card">
+                        <i class="fas fa-arrow-right"></i>
+                        <p class="question-text">What happens if I change this capability?</p>
+                    </div>
+                    <div class="question-card">
+                        <i class="fas fa-arrow-right"></i>
+                        <p class="question-text">Which investments have the best ROI?</p>
+                    </div>
+                    <div class="question-card">
+                        <i class="fas fa-arrow-right"></i>
+                        <p class="question-text">Is this technology aligned with strategy?</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section class="nav-section">
+                <a href="etms-overview.html" class="btn-secondary btn-large">
+                    <i class="fas fa-arrow-left"></i> Back to ETMS Overview
+                </a>
+                <a href="etms-components.html" class="btn-primary btn-large">
+                    <i class="fas fa-arrow-right"></i> Explore Components
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/etms-traceability.js"></script>
+</body>
+</html>

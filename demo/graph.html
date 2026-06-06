@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAZO - Knowledge Graph</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/graph.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>TRAZO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="impact-analysis.html">Impact Analysis</a></li>
+                <li><a href="#" class="active">Graph</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Graph Header -->
+    <div class="graph-header">
+        <div class="container">
+            <h1>Enterprise Knowledge Graph</h1>
+            <p>Visualize relationships across your enterprise</p>
+        </div>
+    </div>
+
+    <!-- Graph Container -->
+    <div class="graph-wrapper">
+        <!-- Controls -->
+        <div class="graph-controls">
+            <div class="control-group">
+                <label>Start Node:</label>
+                <select id="startNode" onchange="updateGraph()">
+                    <option value="">Select an entity...</option>
+                    <option value="objective-001">Strategic Objective: Digital Transformation</option>
+                    <option value="capability-001">Business Capability: Payment Processing</option>
+                    <option value="app-001">Application: Payment Gateway</option>
+                    <option value="data-001">Data Product: Customer Master</option>
+                    <option value="process-001">Process: Order Processing</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Entity Type:</label>
+                <select id="filterType" onchange="updateGraph()">
+                    <option value="">All Types</option>
+                    <option value="objective">Objectives</option>
+                    <option value="capability">Capabilities</option>
+                    <option value="process">Processes</option>
+                    <option value="application">Applications</option>
+                    <option value="api">APIs</option>
+                    <option value="data">Data Products</option>
+                    <option value="risk">Risks</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Depth:</label>
+                <input type="range" id="depthSlider" min="1" max="5" value="3" onchange="updateGraph()">
+                <span id="depthValue">3</span>
+            </div>
+
+            <div class="control-group">
+                <button class="btn-primary" onclick="resetGraph()">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- Graph Visualization -->
+        <div id="graph-container"></div>
+
+        <!-- Graph Info -->
+        <div class="graph-info">
+            <div class="info-panel">
+                <h3>Graph Information</h3>
+                <div class="info-item">
+                    <label>Total Nodes:</label>
+                    <span id="nodeCount">0</span>
+                </div>
+                <div class="info-item">
+                    <label>Total Relationships:</label>
+                    <span id="relationshipCount">0</span>
+                </div>
+                <div class="info-item">
+                    <label>Selected Node:</label>
+                    <span id="selectedNode">None</span>
+                </div>
+            </div>
+
+            <div class="legend">
+                <h3>Legend</h3>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #0066ff;"></span>
+                    <label>Objective</label>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #10b981;"></span>
+                    <label>Capability / Process</label>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #f59e0b;"></span>
+                    <label>Application</label>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #ef4444;"></span>
+                    <label>Risk</label>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #8b5cf6;"></span>
+                    <label>Data Product</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Relationship Types -->
+    <section class="relationship-info">
+        <div class="container">
+            <h2>Relationship Types</h2>
+            <div class="relationship-grid">
+                <div class="relationship-type">
+                    <h4>→ SUPPORTS</h4>
+                    <p>Capability supports Process</p>
+                </div>
+                <div class="relationship-type">
+                    <h4>→ IMPLEMENTS</h4>
+                    <p>Process implements Requirement</p>
+                </div>
+                <div class="relationship-type">
+                    <h4>→ DEPENDS_ON</h4>
+                    <p>Application depends on API</p>
+                </div>
+                <div class="relationship-type">
+                    <h4>→ PRODUCES</h4>
+                    <p>Pipeline produces Dataset</p>
+                </div>
+                <div class="relationship-type">
+                    <h4>→ MITIGATES</h4>
+                    <p>Control mitigates Risk</p>
+                </div>
+                <div class="relationship-type">
+                    <h4>→ OWNS</h4>
+                    <p>Organization owns Entity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <h3>Quick Access</h3>
+            <div class="links-grid">
+                <a href="dashboard.html" class="quick-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="search.html" class="quick-link">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </a>
+                <a href="impact-analysis.html" class="quick-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Impact Analysis</span>
+                </a>
+                <a href="index.html" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script src="js/graph.js"></script>
+</body>
+</html>

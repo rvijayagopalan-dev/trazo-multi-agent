@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAZO - Enterprise Search</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>TRAZO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#" class="active">Search</a></li>
+                <li><a href="impact-analysis.html">Impact Analysis</a></li>
+                <li><a href="graph.html">Graph</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <div class="search-header">
+        <div class="container">
+            <h1>Enterprise Search</h1>
+            <p>Semantic search across your entire enterprise knowledge graph</p>
+        </div>
+    </div>
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-box">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search anything... (try: 'customer data', 'payment systems', 'GDPR controls')" autofocus>
+                    <button class="search-filter"><i class="fas fa-sliders-h"></i></button>
+                </div>
+                <div class="search-suggestions">
+                    <p class="suggestions-label">Popular searches:</p>
+                    <div class="suggestions-list">
+                        <button class="suggestion-tag" onclick="search('customer data')">Customer Data</button>
+                        <button class="suggestion-tag" onclick="search('payment systems')">Payment Systems</button>
+                        <button class="suggestion-tag" onclick="search('GDPR controls')">GDPR Controls</button>
+                        <button class="suggestion-tag" onclick="search('critical applications')">Critical Applications</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2 id="resultsTitle">Search Results</h2>
+                    <p id="resultsCount" class="results-count">Found <strong>0</strong> results</p>
+                </div>
+
+                <!-- Results by Type -->
+                <div id="resultsByType" class="results-by-type">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon"><i class="fas fa-search"></i></div>
+                <p>Start typing to search your enterprise knowledge graph</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <h3>Quick Access</h3>
+            <div class="links-grid">
+                <a href="dashboard.html" class="quick-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="impact-analysis.html" class="quick-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Impact Analysis</span>
+                </a>
+                <a href="graph.html" class="quick-link">
+                    <i class="fas fa-diagram-project"></i>
+                    <span>Knowledge Graph</span>
+                </a>
+                <a href="index.html" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

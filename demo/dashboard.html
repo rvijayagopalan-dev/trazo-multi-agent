@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAZO - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>TRAZO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="impact-analysis.html">Impact Analysis</a></li>
+                <li><a href="graph.html">Graph</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <div class="container">
+            <h1>Enterprise Dashboard</h1>
+            <p>Real-time metrics and analytics across your enterprise</p>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard-container">
+        <div class="container">
+            <!-- Metrics Row -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon applications"><i class="fas fa-cube"></i></div>
+                    <div class="metric-content">
+                        <h3>1,247</h3>
+                        <p>Applications</p>
+                        <span class="metric-change positive"><i class="fas fa-arrow-up"></i> 12% this month</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon data-products"><i class="fas fa-database"></i></div>
+                    <div class="metric-content">
+                        <h3>3,891</h3>
+                        <p>Data Products</p>
+                        <span class="metric-change positive"><i class="fas fa-arrow-up"></i> 8% this month</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon apis"><i class="fas fa-plug"></i></div>
+                    <div class="metric-content">
+                        <h3>5,234</h3>
+                        <p>APIs</p>
+                        <span class="metric-change positive"><i class="fas fa-arrow-up"></i> 15% this month</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon risks"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="metric-content">
+                        <h3>47</h3>
+                        <p>Active Risks</p>
+                        <span class="metric-change negative"><i class="fas fa-arrow-down"></i> 3 resolved</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <!-- Application Status -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Application Status</h3>
+                        <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                    <div class="chart-content">
+                        <div class="status-item">
+                            <span class="status-label">Active</span>
+                            <div class="status-bar">
+                                <div class="status-fill active" style="width: 75%"></div>
+                            </div>
+                            <span class="status-value">934 (75%)</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Deprecated</span>
+                            <div class="status-bar">
+                                <div class="status-fill deprecated" style="width: 15%"></div>
+                            </div>
+                            <span class="status-value">187 (15%)</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Planned</span>
+                            <div class="status-bar">
+                                <div class="status-fill planned" style="width: 10%"></div>
+                            </div>
+                            <span class="status-value">126 (10%)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Heatmap -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Risk Distribution</h3>
+                        <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                    <div class="chart-content risk-heatmap">
+                        <div class="risk-item high">
+                            <span class="risk-label">Critical</span>
+                            <span class="risk-count">12</span>
+                        </div>
+                        <div class="risk-item high">
+                            <span class="risk-label">High</span>
+                            <span class="risk-count">23</span>
+                        </div>
+                        <div class="risk-item medium">
+                            <span class="risk-label">Medium</span>
+                            <span class="risk-count">47</span>
+                        </div>
+                        <div class="risk-item low">
+                            <span class="risk-label">Low</span>
+                            <span class="risk-count">89</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance Status -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Compliance Status</h3>
+                        <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                    <div class="chart-content compliance">
+                        <div class="compliance-item">
+                            <div class="compliance-circle" style="--percentage: 92">
+                                <span class="percentage">92%</span>
+                            </div>
+                            <p>GDPR</p>
+                        </div>
+                        <div class="compliance-item">
+                            <div class="compliance-circle" style="--percentage: 88">
+                                <span class="percentage">88%</span>
+                            </div>
+                            <p>HIPAA</p>
+                        </div>
+                        <div class="compliance-item">
+                            <div class="compliance-circle" style="--percentage: 95">
+                                <span class="percentage">95%</span>
+                            </div>
+                            <p>SOC2</p>
+                        </div>
+                        <div class="compliance-item">
+                            <div class="compliance-circle" style="--percentage: 85">
+                                <span class="percentage">85%</span>
+                            </div>
+                            <p>PCI-DSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Changes -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Recent Changes</h3>
+                        <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                    <div class="chart-content recent-changes">
+                        <div class="change-item">
+                            <div class="change-type create"><i class="fas fa-plus"></i></div>
+                            <div class="change-details">
+                                <p class="change-title">New Application Discovered</p>
+                                <p class="change-desc">Payment Processing Service v2.0</p>
+                                <p class="change-time">2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="change-item">
+                            <div class="change-type update"><i class="fas fa-sync"></i></div>
+                            <div class="change-details">
+                                <p class="change-title">API Updated</p>
+                                <p class="change-desc">Customer API v3.1 released</p>
+                                <p class="change-time">4 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="change-item">
+                            <div class="change-type risk"><i class="fas fa-alert-circle"></i></div>
+                            <div class="change-details">
+                                <p class="change-title">New Risk Detected</p>
+                                <p class="change-desc">Outdated dependency in Order Service</p>
+                                <p class="change-time">6 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="change-item">
+                            <div class="change-type deprecate"><i class="fas fa-trash"></i></div>
+                            <div class="change-details">
+                                <p class="change-title">System Deprecated</p>
+                                <p class="change-desc">Legacy Authentication Service sunset</p>
+                                <p class="change-time">1 day ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <!-- Top Applications -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Top Critical Applications</h3>
+                        <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                    <div class="chart-content">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Application</th>
+                                    <th>Owner</th>
+                                    <th>Criticality</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Payment Gateway</strong></td>
+                                    <td>Finance Team</td>
+                                    <td><span class="badge critical">CRITICAL</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Customer Portal</strong></td>
+                                    <td>Product Team</td>
+                                    <td><span class="badge critical">CRITICAL</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Order Management</strong></td>
+                                    <td>Operations Team</td>
+                                    <td><span class="badge high">HIGH</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Analytics Engine</strong></td>
+                                    <td>Data Team</td>
+                                    <td><span class="badge high">HIGH</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- KPI Trends -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>KPI Trends (30 Days)</h3>
+                        <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                    <div class="chart-content">
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <p class="kpi-label">System Availability</p>
+                                <span class="kpi-value">99.8%</span>
+                            </div>
+                            <div class="kpi-mini-chart">
+                                <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+                                    <polyline points="0,5 10,8 20,6 30,7 40,5 50,3 60,4 70,6 80,5 90,7 100,4"
+                                    fill="none" stroke="#0066ff" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <p class="kpi-label">Deployment Frequency</p>
+                                <span class="kpi-value">12.3/day</span>
+                            </div>
+                            <div class="kpi-mini-chart">
+                                <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+                                    <polyline points="0,15 10,12 20,14 30,10 40,11 50,8 60,9 70,7 80,8 90,5 100,6"
+                                    fill="none" stroke="#10b981" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <p class="kpi-label">Mean Time to Resolution</p>
+                                <span class="kpi-value">2.4 hrs</span>
+                            </div>
+                            <div class="kpi-mini-chart">
+                                <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+                                    <polyline points="0,8 10,6 20,9 30,7 40,5 50,6 60,4 70,3 80,5 90,4 100,3"
+                                    fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights Section -->
+            <div class="chart-card full-width">
+                <div class="card-header">
+                    <h3>AI-Generated Insights</h3>
+                    <div class="card-menu"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="chart-content insights">
+                    <div class="insight-item">
+                        <div class="insight-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="insight-content">
+                            <p class="insight-title">Dependency Optimization Opportunity</p>
+                            <p class="insight-text">Customer Portal has 12 unused service dependencies that can be removed to improve performance by 15%.</p>
+                            <a href="#" class="insight-action">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="insight-content">
+                            <p class="insight-title">Security Control Gap</p>
+                            <p class="insight-text">3 critical security controls are missing evidence. GDPR compliance at risk. Requires immediate action.</p>
+                            <a href="#" class="insight-action">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="insight-content">
+                            <p class="insight-title">Cost Optimization Recommendation</p>
+                            <p class="insight-text">5 payment gateway instances are underutilized. Consolidation could save $45K annually.</p>
+                            <a href="#" class="insight-action">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <h3>Quick Access</h3>
+            <div class="links-grid">
+                <a href="search.html" class="quick-link">
+                    <i class="fas fa-search"></i>
+                    <span>Enterprise Search</span>
+                </a>
+                <a href="impact-analysis.html" class="quick-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Impact Analysis</span>
+                </a>
+                <a href="graph.html" class="quick-link">
+                    <i class="fas fa-diagram-project"></i>
+                    <span>Knowledge Graph</span>
+                </a>
+                <a href="index.html" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

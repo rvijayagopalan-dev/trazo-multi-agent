@@ -1,0 +1,708 @@
+/* ============================================
+   Dashboard Styles
+   ============================================ */
+
+.dashboard-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   Dashboard Container
+   ============================================ */
+
+.dashboard-container {
+    padding-bottom: 3rem;
+}
+
+/* ============================================
+   Metrics Grid
+   ============================================ */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.metric-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.metric-icon.applications {
+    background: linear-gradient(135deg, #0066ff, #0052cc);
+}
+
+.metric-icon.data-products {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.metric-icon.apis {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.metric-icon.risks {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.metric-content h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.75rem;
+}
+
+.metric-content p {
+    margin: 0 0 0.5rem;
+    color: var(--text-light);
+}
+
+.metric-change {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.metric-change.positive {
+    color: var(--success-color);
+}
+
+.metric-change.negative {
+    color: var(--danger-color);
+}
+
+/* ============================================
+   Charts Grid
+   ============================================ */
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Chart Card
+   ============================================ */
+
+.chart-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.chart-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-menu {
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.card-menu:hover {
+    color: var(--text-color);
+}
+
+.chart-content {
+    padding: 1.5rem;
+}
+
+/* ============================================
+   Status Chart
+   ============================================ */
+
+.status-item {
+    margin-bottom: 1.5rem;
+}
+
+.status-item:last-child {
+    margin-bottom: 0;
+}
+
+.status-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.status-bar {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.status-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.status-fill.active {
+    background: linear-gradient(90deg, var(--primary-color), #0052cc);
+}
+
+.status-fill.deprecated {
+    background: linear-gradient(90deg, var(--warning-color), #d97706);
+}
+
+.status-fill.planned {
+    background: linear-gradient(90deg, var(--success-color), #059669);
+}
+
+.status-value {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* ============================================
+   Risk Heatmap
+   ============================================ */
+
+.risk-heatmap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.risk-item {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+
+.risk-item.high {
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+}
+
+.risk-item.medium {
+    background: linear-gradient(135deg, var(--warning-color), #d97706);
+}
+
+.risk-item.low {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+}
+
+.risk-label {
+    font-weight: 600;
+}
+
+.risk-count {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ============================================
+   Compliance Circles
+   ============================================ */
+
+.compliance {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.compliance-item {
+    text-align: center;
+}
+
+.compliance-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(
+        var(--primary-color) 0deg,
+        var(--primary-color) calc(var(--percentage) * 3.6deg),
+        var(--border-color) calc(var(--percentage) * 3.6deg),
+        var(--border-color) 360deg
+    );
+    box-shadow: inset 0 0 0 10px white;
+    position: relative;
+}
+
+.compliance-circle .percentage {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.compliance-item p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .compliance {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   Recent Changes
+   ============================================ */
+
+.recent-changes {
+    padding: 0;
+}
+
+.change-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.3s ease;
+}
+
+.change-item:hover {
+    background-color: var(--bg-color);
+}
+
+.change-item:last-child {
+    border-bottom: none;
+}
+
+.change-type {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.change-type.create {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+}
+
+.change-type.update {
+    background: linear-gradient(135deg, var(--primary-color), #0052cc);
+}
+
+.change-type.risk {
+    background: linear-gradient(135deg, var(--warning-color), #d97706);
+}
+
+.change-type.deprecate {
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+}
+
+.change-details {
+    flex: 1;
+}
+
+.change-title {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.change-desc {
+    margin: 0.25rem 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.change-time {
+    margin: 0.5rem 0 0;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   Data Table
+   ============================================ */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background-color: var(--bg-color);
+}
+
+.data-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.data-table tr:hover {
+    background-color: var(--bg-color);
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================================
+   Badge & Status Badge
+   ============================================ */
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.badge.critical {
+    background-color: var(--danger-color);
+}
+
+.badge.high {
+    background-color: var(--warning-color);
+}
+
+.badge.medium {
+    background-color: var(--primary-color);
+}
+
+.badge.low {
+    background-color: var(--success-color);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+}
+
+.status-badge.deprecated {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning-color);
+}
+
+/* ============================================
+   KPI Items
+   ============================================ */
+
+.kpi-item {
+    margin-bottom: 1.5rem;
+}
+
+.kpi-item:last-child {
+    margin-bottom: 0;
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.kpi-label {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.kpi-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.kpi-mini-chart {
+    height: 30px;
+    background-color: var(--bg-color);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.kpi-mini-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   Insights
+   ============================================ */
+
+.insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .insights {
+        grid-template-columns: 1fr;
+    }
+}
+
+.insight-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.insight-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.insight-content {
+    flex: 1;
+}
+
+.insight-title {
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.insight-text {
+    margin: 0 0 0.75rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.insight-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+}
+
+.insight-action:hover {
+    gap: 0.75rem;
+}
+
+/* ============================================
+   Bottom Section
+   ============================================ */
+
+.bottom-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Quick Links
+   ============================================ */
+
+.quick-links {
+    background-color: var(--bg-color);
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.quick-links h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.quick-link {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.quick-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.quick-link i {
+    font-size: 1.75rem;
+}
+
+.quick-link span {
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .compliance {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .data-table {
+        font-size: 0.85rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.75rem;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        padding: 2rem 0;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .metrics-grid {
+        gap: 1rem;
+    }
+
+    .metric-card {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .metric-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .metric-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .compliance {
+        grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}

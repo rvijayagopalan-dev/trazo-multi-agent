@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAZO - Impact Analysis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/impact-analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>TRAZO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="#" class="active">Impact Analysis</a></li>
+                <li><a href="graph.html">Graph</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Impact Analysis Header -->
+    <div class="impact-header">
+        <div class="container">
+            <h1>Impact Analysis</h1>
+            <p>Predict the impact of changes before implementing them</p>
+        </div>
+    </div>
+
+    <!-- Impact Analysis Container -->
+    <div class="impact-container">
+        <div class="container">
+            <!-- Input Section -->
+            <div class="impact-input-section">
+                <h2>Analyze Change Impact</h2>
+
+                <div class="input-group">
+                    <label for="entityType">Select Entity Type</label>
+                    <select id="entityType" onchange="updateEntities()">
+                        <option value="">Choose entity type...</option>
+                        <option value="application">Application</option>
+                        <option value="api">API</option>
+                        <option value="dataproduct">Data Product</option>
+                        <option value="process">Process</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="entitySelect">Select Entity</label>
+                    <select id="entitySelect">
+                        <option value="">Choose entity...</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="changeType">Type of Change</label>
+                    <select id="changeType">
+                        <option value="">Select change type...</option>
+                        <option value="decommission">Decommission / Sunset</option>
+                        <option value="migrate">Migrate / Move</option>
+                        <option value="update">Update / Upgrade</option>
+                        <option value="dependency">Add / Change Dependency</option>
+                        <option value="scale">Scale Infrastructure</option>
+                    </select>
+                </div>
+
+                <button class="btn-primary btn-large" onclick="analyzeImpact()" style="width: 100%; margin-top: 1rem;">
+                    <i class="fas fa-play-circle"></i> Analyze Impact
+                </button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <!-- Impact Overview -->
+                <div class="impact-overview">
+                    <h2>Impact Analysis Results</h2>
+
+                    <div id="selectedEntity" class="selected-entity-card">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Impact Metrics -->
+                    <div class="impact-metrics">
+                        <div class="metric">
+                            <div class="metric-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="metric-content">
+                                <p class="metric-label">Direct Impact</p>
+                                <p id="directImpact" class="metric-value">0</p>
+                                <p class="metric-desc">systems directly affected</p>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="metric-content">
+                                <p class="metric-label">Indirect Impact</p>
+                                <p id="indirectImpact" class="metric-value">0</p>
+                                <p class="metric-desc">systems indirectly affected</p>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="metric-content">
+                                <p class="metric-label">Associated Risks</p>
+                                <p id="associatedRisks" class="metric-value">0</p>
+                                <p class="metric-desc">risks identified</p>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon"><i class="fas fa-clock"></i></div>
+                            <div class="metric-content">
+                                <p class="metric-label">Estimated Effort</p>
+                                <p id="estimatedEffort" class="metric-value">2-4</p>
+                                <p class="metric-desc">weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impacted Systems -->
+                <div class="impacted-systems">
+                    <h3>Impacted Systems</h3>
+                    <div id="impactedList" class="impacted-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Associated Risks -->
+                <div class="associated-risks">
+                    <h3>Associated Risks</h3>
+                    <div id="risksList" class="risks-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Mitigation Plan -->
+                <div class="mitigation-plan">
+                    <h3>Recommended Mitigation Plan</h3>
+                    <div id="mitigationSteps" class="mitigation-steps">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Action Items -->
+                <div class="action-items">
+                    <h3>Next Steps</h3>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="exportAnalysis()">
+                            <i class="fas fa-download"></i> Export Analysis
+                        </button>
+                        <button class="btn-secondary" onclick="shareAnalysis()">
+                            <i class="fas fa-share-alt"></i> Share Analysis
+                        </button>
+                        <button class="btn-secondary" onclick="resetAnalysis()">
+                            <i class="fas fa-redo"></i> New Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Scenarios -->
+            <div id="examplesSection" class="examples-section">
+                <h2>Try These Examples</h2>
+                <div class="examples-grid">
+                    <div class="example-card" onclick="loadExample('payment')">
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Payment Gateway Migration</h4>
+                        <p>Migrate payment processing to new provider</p>
+                    </div>
+                    <div class="example-card" onclick="loadExample('crm')">
+                        <i class="fas fa-users"></i>
+                        <h4>CRM System Decommission</h4>
+                        <p>Sunset legacy CRM system</p>
+                    </div>
+                    <div class="example-card" onclick="loadExample('api')">
+                        <i class="fas fa-plug"></i>
+                        <h4>API Upgrade</h4>
+                        <p>Upgrade customer API to v3.0</p>
+                    </div>
+                    <div class="example-card" onclick="loadExample('database')">
+                        <i class="fas fa-database"></i>
+                        <h4>Database Migration</h4>
+                        <p>Move data to new platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <h3>Quick Access</h3>
+            <div class="links-grid">
+                <a href="dashboard.html" class="quick-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="search.html" class="quick-link">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </a>
+                <a href="graph.html" class="quick-link">
+                    <i class="fas fa-diagram-project"></i>
+                    <span>Knowledge Graph</span>
+                </a>
+                <a href="index.html" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script src="js/impact-analysis.js"></script>
+</body>
+</html>

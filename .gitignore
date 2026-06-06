@@ -1,0 +1,379 @@
+# ============================================
+# TRAZO Multi-Agent Platform - Git Ignore
+# ============================================
+
+# Environment & Configuration
+.env
+.env.local
+.env.*.local
+.env.production
+config.local.json
+settings.local.json
+*.key
+*.pem
+.credentials
+credentials.json
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+*.code-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-settings
+
+# Operating System
+Thumbs.db
+.Thumbs.db
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.TemporaryItems
+.fseventsd
+.Icon
+ehthumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+*.cover
+*.py,cover
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+out/
+*.bundle.*
+.parcel-cache
+.cache
+.next
+out
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+*.logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Testing
+coverage/
+.nyc_output
+junit.xml
+.mocha_cache
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.#*
+
+# OS Lock files
+.DS_Store
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+.Spotlight-V100
+.Thumbs.db
+.thumbsd
+desktop.ini
+
+# IDE generated files
+.vscode-test
+.vscode-workspace
+*.VC.db
+*.VC.VC.opendb
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+*.mdb
+.mdb
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.dylib
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Kubernetes
+k8s/secrets/
+k8s/*/secrets.yaml
+*.kubeconfig
+
+# Cloud & Deployment
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+.serverless
+amplify/
+.amplifyrc
+SAM-tests/
+
+# AWS
+.aws/
+.awscloudformation/
+cloudformation/output.json
+
+# GCP
+.gcloud/
+.google-cloud-sdk/
+
+# Azure
+.azure/
+local.settings.json
+*.publishsettings
+
+# Sensitive data
+secrets/
+.secrets
+vault/
+.vault
+*.pem
+*.key
+*.p12
+*.pfx
+.ssh/
+private/
+
+# Generated files
+dist/
+build/
+*.generated.*
+codegen/
+
+# LLM & AI
+.cache/models/
+embeddings/
+*.model
+*.pkl
+*.h5
+checkpoints/
+
+# Documentation generated
+docs/_build/
+docs/.doctrees/
+site/
+docs/generated/
+
+# Demo & Experiment files
+demo/uploads/
+demo/temp/
+demo/.data/
+experiments/results/
+scratch/
+test-data/
+sample-data/
+
+# Data files (large)
+*.csv.gz
+*.json.gz
+data/raw/
+data/processed/
+data/*.zip
+data/*.tar.gz
+
+# Media files (large)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.m4v
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*.nb.html
+
+# Project specific
+/BUILD_STATE.md
+/agentic_vacation_project.zip
+/enterprise_agentic_vacation.zip
+/enterprise_project_docs.zip
+/loan-copilot-python.zip
+*.zip
+demo/node_modules/
+demo/dist/
+
+# Local development
+.local/
+local/
+dev-setup/
+test-local/
+
+# CI/CD
+.github/workflows/logs/
+.gitlab-ci-local/
+.circleci/cache/
+
+# Backups
+*.backup
+*.bak
+*.old
+~*
+
+# Vendor/Third-party (keep if needed for specific packages)
+vendor/
+.vendor/
+
+# Package managers cache
+.npm/
+.yarn/cache/
+.yarn/install-state.gz
+
+# Misc
+.DS_Store
+*.pem
+.env.*.local
+.cache
+.ccls-cache/
+*.swp
+.tern-port
+.vuepress/dist/
+
+# Development database
+db.sqlite3
+db.sqlite
+*.db-journal
+
+# Keep important files
+!.gitkeep
+!.github/workflows/.gitkeep
+!docs/*/ARCHITECTURE.md
+!docs/*/DATA_FLOW.md
+
+# ============================================
+# TRAZO Specific Exclusions
+# ============================================
+
+# Large archived projects (keep tracked files)
+!/docs/
+!/.github/
+!/demo/
+
+# Exclude workspace-level artifacts
+/.vs/
+/.vscode/
+
+# Python virtual environments
+/venv/
+/env/
+/ENV/
+/.venv
+
+# Build artifacts
+/target/
+/build/
+/dist/
+
+# IDE
+/.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env.local
+.env.*.local
+.env
+
+# Node modules (if any)
+node_modules/

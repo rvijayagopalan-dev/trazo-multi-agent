@@ -1,0 +1,378 @@
+/* ============================================
+   Graph Visualization Styles
+   ============================================ */
+
+.graph-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+.graph-header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.graph-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   Graph Wrapper
+   ============================================ */
+
+.graph-wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 1rem;
+    height: 600px;
+    margin: 0 20px 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   Graph Controls
+   ============================================ */
+
+.graph-controls {
+    background: white;
+    padding: 1.5rem;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+}
+
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.control-group select,
+.control-group input[type="range"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 0.85rem;
+    font-family: inherit;
+    background-color: white;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.1);
+}
+
+.control-group input[type="range"] {
+    padding: 0;
+    height: 4px;
+    cursor: pointer;
+}
+
+#depthValue {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.control-group .btn-primary {
+    width: 100%;
+    padding: 0.65rem;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Graph Container
+   ============================================ */
+
+#graph-container {
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#graph-container canvas {
+    background: white !important;
+}
+
+/* ============================================
+   Graph Info
+   ============================================ */
+
+.graph-info {
+    background: white;
+    padding: 1.5rem;
+    overflow-y: auto;
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-panel,
+.legend {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-panel:last-child,
+.legend:last-child {
+    border-bottom: none;
+}
+
+.info-panel h3,
+.legend h3 {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.info-item span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* ============================================
+   Relationship Info
+   ============================================ */
+
+.relationship-info {
+    background-color: var(--bg-color);
+    padding: 3rem 0;
+}
+
+.relationship-info h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.relationship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.relationship-type {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.relationship-type h4 {
+    margin: 0 0 0.5rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+.relationship-type p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Quick Links
+   ============================================ */
+
+.quick-links {
+    background-color: var(--bg-color);
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+.quick-links h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.links-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.quick-link {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.quick-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.quick-link i {
+    font-size: 1.75rem;
+}
+
+.quick-link span {
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .graph-wrapper {
+        grid-template-columns: 150px 1fr 150px;
+    }
+
+    .graph-controls,
+    .graph-info {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .graph-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .graph-controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .control-group {
+        margin-bottom: 0;
+    }
+
+    #graph-container {
+        min-height: 400px;
+    }
+
+    .graph-info {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .info-panel,
+    .legend {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .graph-header {
+        padding: 2rem 0;
+    }
+
+    .graph-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .graph-wrapper {
+        margin: 0 10px 2rem;
+    }
+
+    .graph-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-info {
+        grid-template-columns: 1fr;
+    }
+
+    .relationship-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .graph-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .graph-wrapper {
+        margin: 0 5px 1.5rem;
+    }
+
+    .graph-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}

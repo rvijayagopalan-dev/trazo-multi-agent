@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAZO - ETMS Components</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/etms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>TRAZO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="etms-overview.html">ETMS</a></li>
+                <li><a href="etms-traceability.html">Traceability</a></li>
+                <li><a href="#" class="active">Components</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="etms-hero">
+        <div class="container">
+            <h1>ETMS Components Deep Dive</h1>
+            <p>Explore each of the 13 core components and their relationships</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="etms-container">
+        <div class="container">
+            <!-- Component Filter -->
+            <section class="component-filter">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterComponents('all')">All (13)</button>
+                    <button class="filter-btn" onclick="filterComponents('strategy')">Strategy (4)</button>
+                    <button class="filter-btn" onclick="filterComponents('execution')">Execution (5)</button>
+                    <button class="filter-btn" onclick="filterComponents('architecture')">Architecture (3)</button>
+                    <button class="filter-btn" onclick="filterComponents('governance')">Governance (1)</button>
+                </div>
+            </section>
+
+            <!-- Component Details Grid -->
+            <section class="component-details-grid" id="componentsGrid">
+                <!-- Components will be dynamically loaded -->
+            </section>
+
+            <!-- Component Detail Modal -->
+            <div id="componentModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <section class="tech-stack-section">
+                <h2>Recommended Technology Stack</h2>
+                <div class="tech-stack-grid">
+                    <div class="tech-item">
+                        <div class="tech-category">Metadata Repository</div>
+                        <div class="tech-name">PostgreSQL</div>
+                        <p>Structured metadata storage</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Knowledge Graph</div>
+                        <div class="tech-name">Neo4j / JanusGraph</div>
+                        <p>Enterprise relationship model</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Search</div>
+                        <div class="tech-name">OpenSearch</div>
+                        <p>Full-text semantic search</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Data Catalog</div>
+                        <div class="tech-name">DataHub / Collibra</div>
+                        <p>Data product management</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Workflow Engine</div>
+                        <div class="tech-name">Camunda</div>
+                        <p>Process automation</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Document Store</div>
+                        <div class="tech-name">Google Cloud Storage</div>
+                        <p>Architecture artifacts</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Semantic Layer</div>
+                        <div class="tech-name">Enterprise Ontology</div>
+                        <p>Standardized concepts</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Analytics</div>
+                        <div class="tech-name">BigQuery</div>
+                        <p>Value measurement</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-category">Visualization</div>
+                        <div class="tech-name">PowerBI / Looker</div>
+                        <p>Executive dashboards</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Relationships -->
+            <section class="relationships-section">
+                <h2>Component Relationships</h2>
+                <p class="section-subtitle">How components connect and exchange data</p>
+
+                <div class="relationships-grid">
+                    <div class="relationship-group">
+                        <h3>Strategy → Execution</h3>
+                        <div class="relationship-flow">
+                            <span class="flow-item">Strategy</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Portfolio</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Program</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Project</span>
+                        </div>
+                    </div>
+
+                    <div class="relationship-group">
+                        <h3>Business → Technology</h3>
+                        <div class="relationship-flow">
+                            <span class="flow-item">Business Arch</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Solution Arch</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">App Arch</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Tech Arch</span>
+                        </div>
+                    </div>
+
+                    <div class="relationship-group">
+                        <h3>Value Measurement</h3>
+                        <div class="relationship-flow">
+                            <span class="flow-item">Outcome</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Benefit</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">KPI</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">ROI</span>
+                        </div>
+                    </div>
+
+                    <div class="relationship-group">
+                        <h3>Governance Oversight</h3>
+                        <div class="relationship-flow">
+                            <span class="flow-item">Policy</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Review</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Exception</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-item">Audit</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Integration Points -->
+            <section class="integration-section">
+                <h2>TRAZO + ETMS Integration</h2>
+                <div class="integration-grid">
+                    <div class="integration-card">
+                        <h4>ETMS Foundation</h4>
+                        <p>13 core components providing structure and governance</p>
+                    </div>
+                    <div class="integration-arrow">+</div>
+                    <div class="integration-card">
+                        <h4>TRAZO Intelligence</h4>
+                        <p>13 autonomous agents automating discovery and maintenance</p>
+                    </div>
+                    <div class="integration-equals">=</div>
+                    <div class="integration-result">
+                        <h4>Autonomous Enterprise</h4>
+                        <p>Continuous traceability, governance, and value measurement</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section class="nav-section">
+                <a href="etms-overview.html" class="btn-secondary btn-large">
+                    <i class="fas fa-arrow-left"></i> Back to Overview
+                </a>
+                <a href="dashboard.html" class="btn-primary btn-large">
+                    <i class="fas fa-arrow-right"></i> View TRAZO Dashboard
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/etms-components.js"></script>
+</body>
+</html>
